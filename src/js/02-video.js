@@ -1,38 +1,26 @@
-let throttle = require('lodash.throttle');
-// on method 
+import throttle from "lodash.throttle";
 
-const onPlay = function (data) {
-    // data is an object containing properties specific to that event
-};
+ const iframe = document.querySelector('iframe');
+ const player = new Vimeo.Player(iframe);
 
-player.on('play', onPlay);
-// off method 
+const STORAGE_KEY = 'videoplayer-current-time';
 
-// const onPlay = function(data) {
-//     // data is an object containing properties specific to that event
-// };
+player.on('timeupdate', throttle(setTimeToLS, 1000)) // usses library 
+checkCurrentTime(); // dont forget to call the function 
 
-// player.on('play', onPlay);
+function setTimeToLS(time) {
+   console.log(time.percent)  //gets the current time .001
+    
+    localStorage.setItem(STORAGE_KEY, time.seconds.toString()) // gets the time object and converts the current second to a string 
+}
 
-// // If later on you decide that you don’t need to listen for play anymore.
-// player.off('play', onPlay);
+function checkCurrentTime() {
+    const savedTime = localStorage.getItem(STORAGE_KEY);
 
-// // Alternatively, `off` can be called with just the event name to remove all
-// // listeners.
-// player.off('play');
-
-player.getCurrentTime().then(function (seconds) {
-    // seconds = the current playback position
-}).catch(function(error) {
-    // an error occurred
-});
-
-player.on('play', function(data) {
-    // data is an object containing properties specific to that event
-    console.log("ji")
-});
-
-
-
-
+    if (!savedTime) {  
+        return 
+    }
+     player.setCurrentTime(savedTime);
+    
+}
 
