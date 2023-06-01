@@ -37,6 +37,6 @@ function handleSubmit(e) {
     console.log(e.Object);
 
   //  localStorage.removeItem(STORAGE_KEY_2);
-
+    console.log(localStorage.getItem(STORAGE_KEY_2))
     form.reset();
 }
