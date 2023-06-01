@@ -41,7 +41,7 @@ function handleSubmit(e) {
 
         }    
 }
-const date = new Date(6/01/2025);
+const date = new Date(2025 , 6  , 1 , 14 , 2 , 10);
 console.log(date)
 console.log(date.getTime())
 
