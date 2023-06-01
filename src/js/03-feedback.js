@@ -19,8 +19,10 @@ function loadFormData() {
   const savedData = localStorage.getItem(STORAGE_KEY_2);
 
   if (savedData) {
-    const parsedData = JSON.parse(savedData);
-    for (const [name, value] of Object.entries(parsedData)) {
+      const parsedData = JSON.parse(savedData);
+      
+  for (const [name, value] of Object.entries(parsedData)) {
+        
       if (form.elements[name]) {
           form.elements[name].value = value;
           console.log(form.elements[name].value)
@@ -31,7 +33,6 @@ function loadFormData() {
 
 function handleSubmit(e) {
     e.preventDefault();
-
     console.log(e.Object)
     form.reset()
 }
