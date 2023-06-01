@@ -41,3 +41,5 @@ function handleSubmit(e) {
 
         }    
 }
+const date = new date;
+console.log(date)
