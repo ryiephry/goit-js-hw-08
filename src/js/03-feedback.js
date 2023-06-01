@@ -1,26 +1,31 @@
-// import throttle from "lodash.throttle";
+//import throttle from "lodash.throttle";
+const STORAGE_KEY_2 = 'feedback-form-state';
+const form = document.querySelector('.feedback-form');
 
-const STORAGE_KEY_2 = "feedback-form-state";
-const getPreviousInput = localStorage.getItem(STORAGE_KEY_2)
-const form = document.querySelector(".feedback-form");
-form.firstElementChild.lastElementChild.value = getPreviousInput;
+// Load saved form data from localStorage
+loadFormData();
 
-function handelSubmit(e) {
-    e.preventDefault();
+// Save form data on input change
+form.addEventListener('input', saveFormData);
+form.addEventListener('submit', handleSubmit);
 
-    localStorage.setItem(STORAGE_KEY_2, e.target[0].value);
+function saveFormData() {
+  const formData = new FormData(form);
+  const serializedData = JSON.stringify(Object.fromEntries(formData.entries()));
+  localStorage.setItem(STORAGE_KEY_2, serializedData);
+}
 
-    // const both = {
-    //     email: e.target[0].value,
-    //     message: e.target[1].value,
-    // };
+function loadFormData() {
+  const savedData = localStorage.getItem(STORAGE_KEY_2);
 
-    const email   = e.target[0].value;
-    const message = e.target[1].value;
-    
-    console.log(email);
-    console.log(message)
-    form.reset()
-};
-form.addEventListener('submit', handelSubmit);
-//console.log(getPreviousInput)
+  if (savedData) {
+    const parsedData = JSON.parse(savedData);
+    for (const [name, value] of Object.entries(parsedData)) {
+      if (form.elements[name]) {
+        form.elements[name].value = value;
+      }
+    }
+  }
+}
+
+function handleSubmit() {}
