@@ -35,14 +35,13 @@ function handleSubmit(e) {
     e.preventDefault(); 
     console.log("hoe")
 
-    if (e.srcElement[0].value != " " & e.srcElement[1].value != " ") {
+    if (e.srcElement[0].value != "" & e.srcElement[1].value != "") {
+
+        console.log(e.srcElement[0].value)    
         console.log(localStorage.getItem(STORAGE_KEY_2));
-        console.log(e.srcElement[0].value)
+          
         form.reset();
         localStorage.clear(STORAGE_KEY_2);
-    }
-    
+
+        }    
 }
-
-
-//  != " " & e.srcElement[1].value != " "
