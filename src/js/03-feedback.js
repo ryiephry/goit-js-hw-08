@@ -41,5 +41,5 @@ function handleSubmit(e) {
 
         }    
 }
-const date = new date;
+const date = new Date();
 console.log(date)
