@@ -37,7 +37,7 @@ function handleSubmit(e) {
     console.log(localStorage.getItem(STORAGE_KEY_2));
 
     localStorage.clear(STORAGE_KEY_2);
-    console.log(e)
+    console.log(e.srcElement[0])
    // if(e.target)
     form.reset();
 }
