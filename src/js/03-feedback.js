@@ -22,7 +22,8 @@ function loadFormData() {
     const parsedData = JSON.parse(savedData);
     for (const [name, value] of Object.entries(parsedData)) {
       if (form.elements[name]) {
-        form.elements[name].value = value;
+          form.elements[name].value = value;
+          console.log(form.elements[name].value)
       }
     }
   }
