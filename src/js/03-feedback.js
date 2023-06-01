@@ -34,12 +34,10 @@ function loadFormData() {
 function handleSubmit(e) {
     e.preventDefault(); 
 
-    localStorage.clear(STORAGE_KEY_2);
-    
     console.log(localStorage.getItem(STORAGE_KEY_2));
+    localStorage.clear(STORAGE_KEY_2);
 
     form.reset();
 }
-
 
 
