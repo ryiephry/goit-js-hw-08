@@ -33,8 +33,9 @@ function loadFormData() {
 
 function handleSubmit(e) {
     e.preventDefault(); 
+    console.log("hoe")
 
-    if (e.srcElement[0].value === "" & e.srcElement[1].value === "") {
+    if (e.srcElement[0].value === " " & e.srcElement[1].value === " ") {
         console.log(localStorage.getItem(STORAGE_KEY_2));
         console.log(e.srcElement[0].value === " " & e.srcElement[1].value === " ")
         form.reset();
