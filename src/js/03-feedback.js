@@ -37,7 +37,7 @@ function handleSubmit(e) {
 
     if (e.srcElement[0].value != " " & e.srcElement[1].value != " ") {
         console.log(localStorage.getItem(STORAGE_KEY_2));
-        console.log(e.srcElement[0].value != " " & e.srcElement[1].value != " ")
+        console.log(e.srcElement[0].value)
         form.reset();
         localStorage.clear(STORAGE_KEY_2);
     }
@@ -45,3 +45,4 @@ function handleSubmit(e) {
 }
 
 
+//  != " " & e.srcElement[1].value != " "
