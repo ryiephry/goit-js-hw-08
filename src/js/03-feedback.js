@@ -34,9 +34,11 @@ function loadFormData() {
 function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(e.Object);
-
-  //  localStorage.removeItem(STORAGE_KEY_2);
+  //localStorage.removeItem(STORAGE_KEY_2);
+    
     console.log(localStorage.getItem(STORAGE_KEY_2))
-    form.reset();
+    //form.reset();
 }
+
+
+
