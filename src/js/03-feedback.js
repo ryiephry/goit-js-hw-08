@@ -25,16 +25,16 @@ function loadFormData() {
         
       if (form.elements[name]) {
           form.elements[name].value = value;
-          console.log(form.elements[name].value)
+       //   console.log(form.elements[name].value)
       }
     }
   }
 }
 
 function handleSubmit(e) {
-    e.preventDefault(); 
-    console.log("hoe")
-
+    e.preventDefault();
+    console.log(localStorage.getItem(STORAGE_KEY_2));
+    
     if (e.srcElement[0].value != "" & e.srcElement[1].value != "") {
 
         console.log(e.srcElement[0].value)    
