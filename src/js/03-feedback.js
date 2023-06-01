@@ -42,4 +42,8 @@ function handleSubmit(e) {
         }    
 }
 const date = new Date();
-console.log(date)
+console.log(date(6/01/2025))
+console.log(date.getTime())
+
+
+
