@@ -38,7 +38,8 @@ function handleSubmit(e) {
 
     localStorage.clear(STORAGE_KEY_2);
     console.log(e.srcElement[0].value === " " & e.srcElement[1].value === " ")
-    if (e.srcElement[0].value === " " || e.srcElement[1].value === " ") {
+
+    if (e.srcElement[0].value === " " & e.srcElement[1].value === " ") {
         form.reset();
     }
    // if(e.target)
