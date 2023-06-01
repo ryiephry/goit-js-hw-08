@@ -28,4 +28,6 @@ function loadFormData() {
   }
 }
 
-function handleSubmit() {}
+function handleSubmit() {
+    form.reset()
+}
