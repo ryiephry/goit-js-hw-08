@@ -1,2 +1,0 @@
-const e=localStorage.getItem("feedback-form-state"),t=document.querySelector(".feedback-form");t.firstElementChild.lastElementChild.value=e,t.addEventListener("submit",(function(e){e.preventDefault(),localStorage.setItem("feedback-form-state",e.target[0].value);const a=e.target[0].value,l=e.target[1].value;console.log(a),console.log(l),t.reset()}));
-//# sourceMappingURL=03-feedback.c52aa6d3.js.map
