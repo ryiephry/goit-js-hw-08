@@ -6,7 +6,7 @@ const form = document.querySelector('.feedback-form');
 loadFormData();
 
 // Save form data on input change
-form.addEventListener('input', saveFormData);
+form.throttle(addEventListener('input', saveFormData) , 1000);
 form.addEventListener('submit', handleSubmit);
 
 function saveFormData() {
