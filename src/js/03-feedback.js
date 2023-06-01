@@ -33,13 +33,11 @@ function loadFormData() {
 
 function handleSubmit(e) {
     e.preventDefault();
-    console.log(localStorage.getItem(STORAGE_KEY_2));
+       console.log(localStorage.getItem(STORAGE_KEY_2));
     
-    if (e.srcElement[0].value != "" & e.srcElement[1].value != "") {
-
+    if (e.srcElement[0].value != "" & e.srcElement[1].value != " ") {
         console.log(e.srcElement[0].value)    
         console.log(localStorage.getItem(STORAGE_KEY_2));
-          
         form.reset();
         localStorage.clear(STORAGE_KEY_2);
 
