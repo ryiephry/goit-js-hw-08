@@ -1,4 +1,4 @@
-//import throttle from "lodash.throttle";
+import throttle from "lodash.throttle";
 const STORAGE_KEY_2 = 'feedback-form-state';
 const form = document.querySelector('.feedback-form');
 
